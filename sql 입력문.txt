@@ -1,0 +1,20 @@
+sqlplus "/as sysdba"
+
+conn /as sysdba
+
+select username, account_status from dba_users;
+
+alter user hr account unlock;
+
+alter user hr identified by hr;
+
+connect hr/hr;
+
+show user;
+
+삭제하는 방법
+DROP TABLE 테이블명;
+ex)DROP TABLE TEST_01
+
+오타 수정할 때
+SET SQLBLANKLINES ON

@@ -1,0 +1,21 @@
+C:\Users\woori>sqlplus
+
+SQL*Plus: Release 11.2.0.2.0 Production on 월 8월 5 12:30:13 2024
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+Enter user-name: sys as sysdba
+Enter password:
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> show user
+USER is "SYS"
+SQL> alter user sys identified by 1234;
+
+User altered.
+
+SQL> conn sys/1234 as sysdba;
+Connected.
+SQL>
