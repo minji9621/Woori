@@ -1,0 +1,387 @@
+﻿[변수]=================================================================
+1. 아래와 같은 멤버변수를 갖는 MyCard 클래스를 정의하세요. 
+	변수1.  1 ~ 10 사이 카드의 숫자(정수)를 저장할 num이라는 이름의 변수
+	변수2.  카드가 광인지 판단할 isGwang 라는 이름의 변수 (광이면 true/ 아니면 false) 
+
+
+
+
+
+
+2. 1번에서 만든 MyCard 클래스를 이용하여 카드 한장을 만들고(객체 생성) 
+	해당 카드가 몇번이며, 광인지 아닌지 값을 저장한후
+	값을 출력해서 확인해보세요. 
+
+
+
+
+
+3. 학생의 이름과 나이를 저장할 Student 클래스를 정의하세요. 
+
+class Student {
+	String name; //이름
+	int age;       //나이
+}
+
+
+
+
+
+4. 3번에서 만든 Student 클래스를 이용하여 학생한명을 만들고(객체 생성)
+	이름과 나이를 저장하고, 출력해서 확인하세요.
+
+
+public static void main(String[] args) {
+          Student s1 = new Student();
+          s1.name = "java";
+          s1.age = 10;
+          system.out.println("학생 s1의 이름 : " + s1.name);
+          system.out.println("학생 s1의 나이 : " + s1.age);
+
+
+5. 아래와 같은 멤버변수를 갖는 MobilePhone 클래스를 정의하세요.
+	변수1. 가로 사이즈 (실수. ex: 7.5cm)
+	변수2. 세로 사이즈 (실수)
+	변수3. 두께   	   (실수)
+	변수4. 폰 색상  
+	변수5. 폰 브랜드 이름 
+
+
+class MobilePhone {
+	double w = 7.5;
+	double h = 12.0;
+	doublw b = 0.7;
+	String col = "화이트";
+	String name = "APPLE";
+}
+
+6. 5번에서 만든 MobilePhone 클래스를 이용하여 폰을 하나 만들고(객체 생성),
+	모든스펙(변수값들)을 변경하고 출력해보세요. 
+
+public static void main(String[] args) {
+	MobilePhone p1 = new MobilePhone();
+	p1.w = 8.0;
+	p1.h = 11.0;
+	p1.b = 1.0;
+	p1.col = "블랙";
+	p1.name = "삼성";
+	system.out.println(p1.w);
+	system.out.println(p1.h);
+	system.out.println(p1.b);
+	system.out.println(p1.col);
+	system.out.println(p1.name);
+}
+
+7. 학생의 이름과 옷색상을 저장할 GlobalStudent 클래스를 정의하세요. 
+
+class GlobalStudent {
+	String name;
+	String wear_col;
+}
+
+8. 7번에서 만든 GlobalStudent 클래스를 이용하여, 우리반의 같은 분단에 앉은 학생들을 모두 만들고(객체들 생성),
+	각각 객체(학생)에 이름과 옷색상을 저장하고, 출력해서 확인해보세요. 
+
+public static void main(String[] args) {
+	GlodbalStudent s1 = new GlobalStudent();
+	s1.name = "김민지";
+	s1.wear_col = "블루";
+	
+	GlodbalStudent s2 = new GlobalStudent();
+	s2.name = "강해린";
+	s2.wear_col = "그린";
+
+	GlodbalStudent s3 = new GlobalStudent();
+	s3.name = "팜하니";
+	s3.wear_col = "화이트";
+
+	system.out.println("학생의 이름 : " + s1.name + "학생의 옷색상 : " +  s1.wear_col);
+	system.out.println("학생의 이름 : " + s2.name + "학생의 옷색상 : " +  s2.wear_col);
+	system.out.println("학생의 이름 : " + s3.name + "학생의 옷색상 : " +  s3.wear_col);
+
+}
+
+[메서드]=================================================================
+
+1. 아래와 같은 클래스를 파일에 만드시고,
+	class Ex01 {
+		String str = "hello java";
+		int year = 2020;
+	
+		void getStr1(){
+			syetem.out.println(str);
+	}
+		String getStr2(){
+			return str;
+	}
+		void getYear1(){
+			system.out.println(year);
+	}
+		int getYear2(){
+			return year;
+	}
+}
+
+	str 변수값을 출력하는 인스턴스메서드 1개와 
+	year 변수값을 출력하는 인스턴스메서드 1개, 총 두개의 메서드를 만드세요. 
+
+	set=값을 저장하는 역할
+	get=값을 꺼내 확인하는 역할
+
+
+2. 1번에서 만든 Ex01 클래스의 두개의 인스턴스 메서드를 호출해 보세요.  
+	public static void main(String[] args){
+		Ex01 ex = new Ex01();
+		ex.getStr1();
+		String str = ex.getStr2();   //메서드의 결과는 호출한 곳으로 돌아온다.
+		System.out.println(str);
+
+		ex.getYear1();
+		int year = ex.getYear2();
+		System.out.println(year);
+}
+
+
+3. 아래와 같은 클래스를 파일에 만드시고, 
+	class Ex02 {
+		private int a; 
+		private boolean isPlay;
+		private double d;
+
+		public void setA(int a){
+			this.a = a;			
+		}
+		public void setIsPlay(boolean isPlay){
+			this.isPlay = isPlay;
+		}
+		public void setD(double d){
+			this.d = d;
+		}
+}
+
+	Ex02 클래스안에 변수의 개수만큼 인스턴스변수 3개를 만드세요.
+	각 인스턴스 메서드는 각각의 변수와 매칭이 되고, (ex: int a <- setA(), double d <- setD() 이런식)
+	메서드들은 매칭되는 변수에 값을 대입시키도록 만들어 보세요. (값은 원하는 값으로 대입) <-set메서드를 사용하라는 뜻!
+
+
+
+4. 3번에서 만든 Ex02 클래스를 객체 생성하고,
+	메서드를 호출한 후, 각 대입된 값이 맞는지 출력해보세요. 
+
+	public static void main(String[] args){
+		Ex02 ex = new Ex02();
+		ex.setA(10);
+		ex.setIsPlay(true);
+		ex.setD(5.5);
+
+		//int result1 = ex.a;
+		//boolean result2 = ex.isPlay;
+		//double result3 = ex.d;
+		System.out.println(ex.a);
+		System.out.println(ex.isPlay);
+		System.out.println(d);
+}
+
+
+5. 모바일 폰 클래스를 만들기. 
+	MobilePhone 이라는 이름의 클래스를 만들고,
+	브랜드 이름, 폰의 가로크기, 세로크기, 무게를 저장할 변수를 만드세요. 
+	그리고, 전화걸기, 전화받기, 문자 보내기, 문자받기 메서드(기능)도 만드세요. 
+	(기능안에는 실행되었는지 확인하기 위해 단순히 출력문 하나 넣어놓기)
+
+	class MobilePhone {
+		double w = 7.5;
+		double h = 12.0;
+		doublw b = 0.7;
+		String col = "화이트";
+		String name = "APPLE";
+
+	public void call(String phoneNum){
+		System.out.println(phoneNum + "으로 전화걸기");
+	}
+	public void answer(){
+		System.out.println("전화받기");
+	}
+	public void sendMessage(String msg){
+		System.out.println(msg + "문자보내기");
+	}
+	public void receiveMessage(){
+		System.out.println("문자받기");
+	}
+}
+
+
+6. 6번에서 만든 MobilePhone을 이용하여 폰을 하나 생성하고, 
+	폰의 모든 속성(변수)들을 출력하고
+	속성값도 변경한후, 변경도 잘 되었는지 확인하기 위하여 다시 출력해보세요. 
+
+	public static void main(String[] args){
+		MobilePhone mp = new MobilePhone();
+		System.out.println("가로 : " + mp.w 
+				+ "세로 : " + mp.h 
+				+ "두께 : " + mp.b 
+				+ "색상 : " + mp.col
+				+ "브랜드 : " + mp.name);
+		mp.name = "APPLE";
+		System.out.println(mp.name);
+}
+	
+
+7. 위 모바일 폰 클래스에 만들어둔 기능 중 전화 걸기 메서드를 수정하기. 
+	전화 걸기 메서드에 전화번호를 던져주면 (예 : "010-1111-2222"),
+	메서드에서는 해당 전화번호로 전화를 걸고 있다는 출력문을 작성하세요.
+	(예: 010-1111-2222 로 전화를 걸고 있습니다.)
+
+	class MobilePhone {
+		double w = 7.5;
+		double h = 12.0;
+		doublw b = 0.7;
+		String col = "화이트";
+		String name = "APPLE";
+
+	public void call(String phoneNum){
+		System.out.println(phoneNum + "으로 전화거는중");
+	}
+	public void answer(){
+		System.out.println("전화받기");
+	}
+	public void sendMessage(String msg){
+		System.out.println(msg + "문자보내기");
+	}
+	public void receiveMessage(){
+		System.out.println("문자받기");
+	}
+
+	public static void main(String[] args){
+		MobilePhone mp = new MobilePhone();
+		System.out.println("가로 : " + mp.w 
+				+ "세로 : " + mp.h 
+				+ "두께 : " + mp.b 
+				+ "색상 : " + mp.col
+				+ "브랜드 : " + mp.name);
+		mp.name = "APPLE";
+		System.out.println(mp.name);
+
+		mp.call("010-1111-1111");   //결과 : 010-1111-1111으로 전화거는중
+		mp.sendMessage("안녕");   //결과 : 안녕 문자보내기
+		
+		}
+}
+
+8. 매개변수로 받은 두 정수형  변수를 합하여 결과를 리턴하는 sum() 메서드를 구현하세요 
+이때 두 정수형변수는 모두 양수 이며 음수인경우 0을 리턴 합니다. 
+
+	class Ex00 {
+		public int sum(int a, int b){	
+			int result = 0;
+			if(a>0 && b>0){ //a,b 모두 양수인 경우
+				result a + b;
+			return result;
+
+
+9. 매개변수로 받은 정수형 변수의 값에 따라 구구단을 출력하는 gugudan() 메서드를 구현하세요 
+	실행결과) gugudan(3);
+		3x1=3
+		3x2=6
+		...
+
+class Ex01 {
+	public void gugudan(int dan){
+		for(int i = 1; i <=9; i++){
+			System.out.println(dan + "*" + i + "=" + (dan * i));
+		}
+	}
+}
+
+
+[생성자]=================================================================
+
+1. 아래와같은 내용을 포함하는 TinCase 라는 클래스를 만드세요. 
+	변수 : 가로, 세로, 높이, 색상
+	메서드 : 변수의 값을 모두 출력하는 메서드
+	생성자 : 가로,세로,높이,색상 값을 모두 받아서 변수들을 초기화해주는 생성자 한개
+
+class TinCase{
+	int x; //가로
+	int y; //세로
+	int z; //높이
+	String color;
+
+	TinCase(int x, int y, int z, String color){ //생성자
+		this.x = x;
+		this.y = y;
+		this.z = z;
+		this.color = color;
+	}
+
+	void print(){ //메서드
+		System.out.println(x+","+y+","+z+","+color);
+
+
+
+2. 1번에서만든 TinCase를 이용하여 "빨간색", "노란색", "초록색", "보라색" 케이스를 만들고,
+	작성해둔 메서드를 실행해보세요. 가로,세로,높이는 마음대로 지정
+	콘솔출력예시 : "10 * 20 * 5cm의 빨간색 틴케이스 제작"
+
+public static void main(String[] args){
+	TinCase tc = new TinCase(10,20,5,"빨간색"); 
+	tc.print();
+
+
+3. 아래와 같은 내용을 포함하는 Bottle 클래스를 작성하세요. 
+	변수 : 병의 재질, 색상, 지름, 높이
+	생성자 :  1. 병의 재질과 색상을 받는 생성자
+		2. 병의 지름과 높이, 재질을 받는 생성자.
+		3. 변수값 모두 받는 생성자
+	메서드 : 변수들의 값을 모두 출력하는 메서드 
+
+	class Bottle {
+		String t; //재질
+		String c; //색상
+		int d; //지름
+		int h; //높이
+	
+	Bottle(String t, String c){
+		this(t,c,0,0);
+	}
+	Bottle(int d, int h, String t){
+		this(t,null,d,h);
+	}
+	Bottle(String t, String c, int d, int h){
+		this.t = t;
+		this.c = c;
+		this.d = d;
+		thid.h = h;
+	}
+	void bottleInfo(){
+		System.out.println(t+","+c+","+d+","+h); // 변수들의 값을 모두 출력하는 메서드
+
+	
+4. 3번에서만든 Bottle 클래스를 만들어서, 플라스틱병, 유리병, 스테인레스병, 지름이 10, 높이가 20 등 
+		각기다른 변수값들로 이루어진 병을 생성자활용하여 만들어보세요. 
+		값 확인을 위하여 만든 메서드 호출하여 확인. 
+
+	public static void main(String[] args){
+		Bottle b1 = new Bottle(p,"blue",10,20);
+		b1.bottleInfo();
+		
+		Bottle b2 = new Bottle(g,"whilte",15,18);
+		b2.bottleInfo();
+		
+		Bottle b3 = new Bottle(s,"silver",11,17);
+		b3.bottleInfo();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
