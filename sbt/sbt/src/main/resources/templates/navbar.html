@@ -1,0 +1,36 @@
+<!-- 내비게이션 바 설정 -->
+<nav th:fragment="navbarFragment" class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+	<div class="container-fluid">
+			
+		<!-- SBP를 클릭 시 메인으로 이동 -->
+		<a class="navbar-brand" href="/question/list">SBP</a>
+		<!-- 내비게이션 바의 버튼 부트스트랩 적용 -->
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+							aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+			
+		<!-- 화면 크기에 따라 내비게이션 바의 메뉴 노출 정도 설정 -->
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			
+		<!-- 내비게이션의 오른쪽 바의 메뉴 오른쪽과 왼쪽의 여백 지정 -->
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				
+				<!-- li 태그 :  내비게이션 바의 메뉴 -->
+				<li class="nav-item">
+					<a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
+										<!-- sec:authorize="isAnonymous()"
+												: 로그인 되지 않은 경우에 해당 요소
+												  (로그인 링크)가 표시된다. -->
+					<a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+										<!-- sec:authorize="isAuthenticated()"
+												: 로그인 된 경우 로그아웃 링크가 표시된다. -->
+				</li>		
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/user/signup}">회원 가입</a>
+				</li>
+			</ul>
+		</div>
+			
+	</div>
+</nav>
